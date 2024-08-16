@@ -39,4 +39,4 @@ function Person(firstName, lastName, age, eyeColor) {
   }
 let otherperson = new Person("Abdullah","Khanzada",20,"brown")
 let myotherstring = JSON.stringify(otherperson)
-console.log(myotherstring)
+console.log()

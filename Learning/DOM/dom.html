@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Practice</title>
+</head>
+<body>
+<script src="dom.js"></script>
+<h1> DOM </h1>
+<h2>2nd</h2>
+<h2>3rd</h2>
+<h2>4th</h2>
+<h2>5th</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</body>
+<script>
+const div = document.createElement('div');
+div.className = 'test';
+div.style.color = "#FF9100"
+div.style.backgroundColor = "#D5ED9F"
+div.style.padding = "10px"
+div.style.borderRadius = "5px"
+div.style.background
+// div.innerHTML = 'Hello';
+// document.body.appendChild(div);
+const texthei = document.createTextNode('HELLO');
+div.appendChild(texthei);
+document.body.appendChild(div);
+</script>
+</html>

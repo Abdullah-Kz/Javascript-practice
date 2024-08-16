@@ -53,6 +53,16 @@ console.log(addTwo(3, 4))
 
 // myArray.forEach()
 
-((name) => {
-    global.console.log(`DB CONNECTED TWO ${name}`);
-  })('hitesh');
+
+
+// Immediately Invoked Function Expressions (IIFE)
+
+
+// (function chai(){
+//     // named IIFE
+//     console.log(`DB CONNECTED`);
+// })();
+
+// ( (name) => {
+//     console.log(`DB CONNECTED TWO ${name}`);
+// } )('hitesh')

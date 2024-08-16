@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Practice</title>
+</head>
+<body>
+    <ul class="cars">
+        <li>BMW</li>
+    </ul>
+</body>
+
+<script>
+function addCar(carname) {
+    const li = document.createElement('li');
+    li.appendChild(document.createTextNode(carname));
+    document.querySelector('.cars').appendChild(li);
+}
+function caredit(carname,index) {
+   const cartobechanged = document.querySelector(`li:nth-child(${index})`)
+    const newli = document.createElement('li');
+    newli.textContent = carname;
+    cartobechanged.replaceWith(newli);
+}
+function carremove(index) {
+   const removedcar = document.querySelector(`li:nth-child(${index})`)
+  removedcar.remove()
+}
+
+addCar('Toyota');
+addCar('Nissan')
+caredit('Mercedes',2)
+carremove(2)
+
+
+
+</script>
+</html>
