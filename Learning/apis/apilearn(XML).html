@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .profile{
+            display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+        }
+        .info{
+            color: white;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="background-color: #212121;">
+    <!-- 0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete. -->
+<div class="row profile">
+    <div class="col-4 profileimage">
+    <img class="profile-image" src="" alt="PROFILE IMAGE" width="300" height="300">
+    </div>
+    <div class="col-8 info">
+        <h3 id="username">Username : </h3>
+        <h4 id="bio">Bio : </h4>
+        <h4 id="location">Location : </h4>
+        <h4 id="repos">Repositaies created : </h4>
+        <h4 id="followers">Number of followers : </h4>
+                
+
+</div>
+</div>
+</body>
+<script>
+
+   const requestUrl = 'https://api.github.com/users/Abdullah-Kz'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function(){
+     
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            let image = document.querySelector('.profile-image')
+    let username = document.querySelector('#username')
+    let followers = document.querySelector('#followers')
+    let bio = document.querySelector('#bio')
+    let location = document.querySelector('#location')
+    let repos = document.querySelector('#repos')
+    
+            const data = JSON.parse(this.responseText)
+            image.src = data.avatar_url
+            username.innerHTML += data.login
+            followers.innerHTML += data.followers
+            bio.innerHTML += data.bio
+            location.innerHTML += data.location
+            repos.innerHTML += data.public_repos
+        }
+    }
+    xhr.send();
+</script>
+</html>
